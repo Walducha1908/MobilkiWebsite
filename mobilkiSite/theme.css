@@ -1,0 +1,43 @@
+body {
+    font-family:Kaushan Script;
+    text-align: center;
+    font-size: 30pt;
+    background-image: url("img/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+header {
+    text-align: center;
+    font-size: 50pt;
+}
+
+footer {
+    background-repeat: no-repeat;
+}
+
+img {
+    margin-left: 5%;
+    width: 150px;
+    height: 150px;
+    margin-top: 22%;
+}
+
+.study {
+    width: 150px;
+    height: 180px;
+    margin-top: 10%;
+}
+
+.study2 {
+    width: 200px;
+    height: 200px;
+    margin-top: 18%;
+}
+
+.study3 {
+    width: 200px;
+    height: 200px;
+    margin-top: 10%;
+}
