@@ -3,16 +3,16 @@
 /* ===================== our variables ===================== */
 let scoreJson;
 let scoreList = [];
-let downloadCounter;
-let downloadCounterJSON = window.localStorage.getItem("downloads");
-    if (downloadCounter == null)
-        downloadCounter = JSON.parse(downloadCounterJSON);
-    else
-        downloadCounter = 0;
+// let downloadCounter;
+// let downloadCounterJSON = window.localStorage.getItem("downloads");
+//     if (downloadCounter == null)
+//         downloadCounter = JSON.parse(downloadCounterJSON);
+//     else
+//         downloadCounter = 0;
 
 let getJsonData = function () {
     $.ajax({
-        url: 'https://api.myjson.com/bins/137f1w',
+        url: 'https://api.myjson.com/bins/elx1k',
         type: 'GET',
         success: (data) => {
             scoreJson = data;
@@ -63,9 +63,9 @@ let updateScoreLine = function () {
     let place = 1;
 
     //displaying download counter
-    let downloadDisplay = document.getElementById("DC");
-    let newContentName = document.createTextNode("Ilość pobrań gierki: " + downloadCounter);
-    downloadDisplay.appendChild(newContentName);
+    // let downloadDisplay = document.getElementById("DC");
+    // let newContentName = document.createTextNode("Ilość pobrań gierki: " + downloadCounter);
+    // downloadDisplay.appendChild(newContentName);
 
     const sortedScore = Array.from(scoreList).sort(compare);
 
@@ -103,9 +103,9 @@ function compare (a, b) {
     return b.score - a.score; 
  }
 
-let countDownload = function() {
-    downloadCounter++;
-    window.localStorage.setItem("downloads", JSON.stringify(downloadCounter));
-}
+// let countDownload = function() {
+//     downloadCounter++;
+//     window.localStorage.setItem("downloads", JSON.stringify(downloadCounter));
+// }
 
 getJsonData();
