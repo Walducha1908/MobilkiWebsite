@@ -3,6 +3,12 @@
 /* ===================== our variables ===================== */
 let scoreJson;
 let scoreList = [];
+let downloadCounter;
+let downloadCounterJSON = window.localStorage.getItem("downloads");
+    if (downloadCounter == null)
+        downloadCounter = JSON.parse(downloadCounterJSON);
+    else
+        downloadCounter = 0;
 
 let getJsonData = function () {
     $.ajax({
@@ -93,8 +99,14 @@ let updateScoreLine = function () {
 }
 
 function compare (a, b) {
-    return a.score < b.score; 
+    return b.score - a.score; 
  }
+
+let countDownload = function() {
+    downloadCounter++;
+    window.localStorage.setItem("downloads", JSON.stringify(downloadCounter));
+    console.log(downloadCounter);
+}
 
 getJsonData();
 updateScoreLine();
