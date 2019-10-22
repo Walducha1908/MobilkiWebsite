@@ -54,7 +54,7 @@ let updateScoreLine = function () {
     firstRow.appendChild(firstRowDesc);
 
     let firstRowPlace = document.createElement("td");
-    let firstRowPlaceText = document.createTextNode("Nazwa użytkownika");
+    let firstRowPlaceText = document.createTextNode("Gracz");
     firstRowPlace.appendChild(firstRowPlaceText);
     firstRow.appendChild(firstRowPlace);
 
