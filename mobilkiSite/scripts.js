@@ -61,10 +61,11 @@ let updateScoreLine = function () {
     table.appendChild(firstRow);
 
     let place = 1;
-    let topScore = [];
-    for (let i=0; i<10; i++) {
-        topScore[i] = 0;
-    }
+
+    //displaying download counter
+    let downloadDisplay = document.getElementById("DC");
+    let newContentName = document.createTextNode("Ilość pobrań gierki: " + downloadCounter);
+    downloadDisplay.appendChild(newContentName);
 
     const sortedScore = Array.from(scoreList).sort(compare);
 
@@ -105,8 +106,6 @@ function compare (a, b) {
 let countDownload = function() {
     downloadCounter++;
     window.localStorage.setItem("downloads", JSON.stringify(downloadCounter));
-    console.log(downloadCounter);
 }
 
 getJsonData();
-updateScoreLine();
